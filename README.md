@@ -1,0 +1,1 @@
+## Package para codificar e decodificar objeto para o formato json.

@@ -1,0 +1,46 @@
+# https://dart.dev/tools/pub/pubspec
+# https://dart.dev/tools/pub/publishing
+# https://semver.org/spec/v2.0.0-rc.1.html
+
+name: convert_json
+description: Package para codificar e decodificar objeto para o formato json.
+version: 1.0.0
+homepage: https://github.com/Suebersson/convert_json.git
+repository: https://github.com/Suebersson/convert_json
+issue_tracker: https://github.com/Suebersson/convert_json/issues
+documentation: https://pub.dev/documentation/convert_json/latest/
+
+# Comandos para atulizar o repositório no github
+# git init
+# git add .
+# git commit -m "name commit"
+# git remote add origin https://github.com/Suebersson/convert_json.git
+# git pull origin main
+# git push -u origin main
+
+# package local que não será publicado
+publish_to: none
+
+environment:
+  sdk: ^3.0.0 # ^3.4.3
+
+platforms:
+  android:
+  ios:
+  linux:
+  macos:
+  web:
+  windows:
+
+topics:
+  - json
+  - encode-Json
+  - decode-Json
+  - convert-json
+  - to-json
+
+dependencies:
+
+dev_dependencies:
+  lints: ^4.0.0
+  test: ^1.24.0
