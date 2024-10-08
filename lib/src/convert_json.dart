@@ -55,9 +55,9 @@ abstract final class ConvertJson {
   /// [ObjectTreatment] tratar objetos personalizados e converter para objetos codificavel/compativel 
   /// com o formato json, se todos os testes forem falsos a segunda etapa será aplicada tratando 
   /// os objetos primitivos do dart 
-  static String encode(Object object, {List<ObjectTreatment>? treatments}) {
+  static String encode(Object codable, {List<ObjectTreatment>? treatments}) {
     return json.encode(
-      object, 
+      codable, 
       toEncodable: (dynamic object) {
         // primero tratamento
         if (treatments is List<ObjectTreatment> && treatments.isNotEmpty) {
@@ -73,7 +73,7 @@ abstract final class ConvertJson {
         } else if (object is DateTime) {
           return object.toIso8601String();
         } else if(object is ToJson) {
-          return object.toMap;
+          return object.codable;
         } else {
           // Exeception que será emitida se o objeto for icompatível para o formato 
           // JSON [JsonUnsupportedObjectError] caso essa função seja defina
@@ -122,7 +122,10 @@ abstract final class ConvertJson {
   /// 
   /// [{"item":"{\"contains\":\"false\"}"}]
   static String adjustReformattedJson(String json) {
-    return json.replaceAll('"{\\"', '{"').replaceAll('\\"}"', '"}').replaceAll('\\"', '"');
+    return json
+      .replaceAll('"{\\"', '{"')
+      .replaceAll('\\"}"', '"}')
+      .replaceAll('\\"', '"');
   }
 
 }
@@ -133,7 +136,10 @@ final class ObjectTreatment {
   final Object? Function(dynamic) treat;
 }
 
-abstract interface class ToJson {
-  Map<String, dynamic> get toMap;
+/// O atributo [codable] pode ser qualquer objeto codificável para o formato json
+/// 
+/// Tipos esperos: [Map<String, dynamic>], [List<dynamic>]
+abstract interface class ToJson<O> {
+  O get codable;
   String get toJson;
 }
