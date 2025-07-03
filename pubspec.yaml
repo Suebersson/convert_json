@@ -9,6 +9,7 @@ homepage: https://github.com/Suebersson/convert_json.git
 repository: https://github.com/Suebersson/convert_json
 issue_tracker: https://github.com/Suebersson/convert_json/issues
 documentation: https://pub.dev/documentation/convert_json/latest/
+publish_to: none # package local que não será publicado
 
 # Comandos para atulizar o repositório no github
 # git init
@@ -17,9 +18,6 @@ documentation: https://pub.dev/documentation/convert_json/latest/
 # git remote add origin https://github.com/Suebersson/convert_json.git
 # git pull origin main
 # git push -u origin main
-
-# package local que não será publicado
-publish_to: none
 
 environment:
   sdk: ^3.0.0 # ^3.4.3
@@ -42,5 +40,5 @@ topics:
 dependencies:
 
 dev_dependencies:
-  lints: ^4.0.0
-  test: ^1.24.0
+  lints: ^6.0.0
+  test: ^1.26.2

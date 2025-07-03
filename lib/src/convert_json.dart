@@ -3,8 +3,8 @@ import './exception.dart';
 
 abstract final class ConvertJson {
 
-  static final RegExp intPattern = RegExp('^[0-9]{1,}\$');
-  static final RegExp doublePattern = RegExp('^[0-9]{1,}\\.[0-9]{1,}\$');
+  static final RegExp intPattern = RegExp('^(-|)[0-9]{1,}\$');
+  static final RegExp doublePattern = RegExp('^(-|)[0-9]{1,}\\.[0-9]{1,}\$');
   static final RegExp datePattern = RegExp(r'^(\d{4}-\d{2}-\d{2})|(-\d{4}-\d{2}-\d{2})');
   static final RegExp boolPattern = RegExp('^(true|false)\$', caseSensitive: false);
   static final RegExp stringWithAccentsPattern = RegExp('[À-ž]', multiLine: true);
