@@ -13,7 +13,7 @@ abstract final class ConvertJson {
   static O decode<O>(String encoded) {
 
     if (encoded.isEmpty) {
-      throw const ConvertJsonExeception('Não é possível decodificar e criar um objeto com a string vazia');
+      throw const ConvertJsonException('Não é possível decodificar e criar um objeto com a string vazia');
     }
 
     encoded = adjustReformattedJson(encoded);
@@ -77,7 +77,7 @@ abstract final class ConvertJson {
         } else {
           // Exeception que será emitida se o objeto for icompatível para o formato 
           // JSON [JsonUnsupportedObjectError] caso essa função seja defina
-          throw ConvertJsonExeception(
+          throw ConvertJsonException(
             'Tipos objetos compatíveis para o formato json Key:[String], Key:[int], Key:[double], Key:[bool], '
             'Key:[Null], Key:[List], Key:[Map]\n\n'
             'Tipo de objeto não tratado para converter para o formato '  
@@ -94,7 +94,7 @@ abstract final class ConvertJson {
     } on FormatException {
       // A string é vazia ou é icompatível com formato JSON
       return alternativeValue.call();
-    } on ConvertJsonExeception {
+    } on ConvertJsonException {
       // A string é vazia ou é icompatível com formato JSON
       return alternativeValue.call();
     } catch (_) {
@@ -109,7 +109,7 @@ abstract final class ConvertJson {
     } on FormatException {
       // A string é vazia ou é icompatível com formato JSON
       return null;
-    } on ConvertJsonExeception {
+    } on ConvertJsonException {
       // A string é vazia ou é icompatível com formato JSON
       return null;
     } catch (_) {

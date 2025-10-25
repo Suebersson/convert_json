@@ -1,7 +1,7 @@
-final class ConvertJsonExeception implements Exception {
+final class ConvertJsonException implements Exception {
   final String message;
-  const ConvertJsonExeception(this.message);
-  static T generate<T>(final String message) => throw ConvertJsonExeception(message);
+  const ConvertJsonException(this.message);
+  static T generate<T>(final String message) => throw ConvertJsonException(message);
   @override
   String toString() => message;
 }
