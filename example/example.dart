@@ -1,5 +1,5 @@
 import 'dart:developer';
-import 'package:convert_json/convert_json_lib.dart';
+import 'package:convert_json/convert_json.dart';
 
 void main() {
 

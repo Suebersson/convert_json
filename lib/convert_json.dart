@@ -1,5 +1,5 @@
-library convert_json;
+library;
 
-export './src/convert_json.dart';
+export 'src/converter.dart';
 export './src/exception.dart';
 export './src/extension.dart';

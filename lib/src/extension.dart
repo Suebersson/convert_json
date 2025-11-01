@@ -1,4 +1,4 @@
-import './convert_json.dart';
+import './converter.dart';
 
 /// Auxiliar para converter objetos [Map] em json
 extension ConvertJsonForMap on Map<String, dynamic> {

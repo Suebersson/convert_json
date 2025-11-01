@@ -9,7 +9,7 @@ homepage: https://github.com/Suebersson/convert_json.git
 repository: https://github.com/Suebersson/convert_json
 issue_tracker: https://github.com/Suebersson/convert_json/issues
 documentation: https://pub.dev/documentation/convert_json/latest/
-publish_to: none # package local que não será publicado
+publish_to: none
 
 # Comandos para atulizar o repositório no github
 # git init
@@ -20,7 +20,9 @@ publish_to: none # package local que não será publicado
 # git push -u origin main
 
 environment:
-  sdk: ^3.0.0 # ^3.4.3
+  sdk: ^3.5.0
+
+resolution: workspace
 
 platforms:
   android:
