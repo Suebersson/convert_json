@@ -65,6 +65,9 @@ linter:
     # inserir uma vígula em cada atributo dos objetos
     require_trailing_commas: true
 
+    # não simplificar as variáveis nomeadas
+    simplify_variable_pattern: false
+
     # Mostrar onde deve inserir os comentários de documentação nos objeto dart
     # public_member_api_docs: true
     

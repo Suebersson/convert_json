@@ -39,8 +39,8 @@ topics:
   - convert-json
   - to-json
 
-dependencies:
+# dependencies:
 
 dev_dependencies:
-  lints: ^6.0.0
+  lints: ^6.1.0
   test: ^1.26.2
